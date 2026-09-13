@@ -388,15 +388,6 @@ Instead of opening dozens of tabs or keeping bookmarks scattered across differen
 
 ---
 
-## 📄 License
-
-Add your preferred open-source license here, for example:
-
-```text
-MIT License
-```
-
-if the project is intended to be distributed under the MIT license.
 
 # Homepage
 
@@ -811,17 +802,5 @@ Homepage представляет собой самостоятельную ве
 
 Сайты, поиск, заметки, задачи, дедлайны, статистика и полезные инструменты находятся рядом и доступны с одной страницы.
 
----
 
-# 📄 Лицензия
-
-Если проект распространяется как open-source, сюда можно добавить выбранную лицензию.
-
-Например:
-
-```text
-MIT License
-```
-
-при условии, что проект действительно распространяется под MIT License.
 
