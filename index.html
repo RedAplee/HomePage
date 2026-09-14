@@ -2495,9 +2495,9 @@
       <!-- СТРОКА ПОИСКА -->
       <div class="search-bar-container">
         <select id="search-engine-select" onchange="updateSearchEngine()">
-          <option value="https://yandex.ru/search/?text=">Яндекс</option>
+          <option value="https://yandex.ru/search/?text=" data-i18n="yandex">Яндекс</option>
           <option value="https://www.google.com/search?q=">Google</option>
-          <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+          <option value="https://duckduckgo.com/?q=" data-i18n="duckduckgo">DuckDuckGo</option>
         </select>
         <form
           id="search-form"
@@ -2509,10 +2509,11 @@
             type="text"
             id="search-input"
             name="q"
+            data-i18n-placeholder="search_placeholder"
             placeholder="Введите поисковый запрос..."
             autocomplete="off"
           />
-          <button type="submit">Найти</button>
+          <button type="submit" data-i18n="search_button">Найти</button>
         </form>
       </div>
 
@@ -2538,7 +2539,7 @@
               font-weight: 600;
             "
           >
-            <span>≡</span> Меню
+            <span>≡</span> <span data-i18n="menu">Меню</span>
           </button>
         </div>
       </div>
@@ -2556,7 +2557,7 @@
       >
         <div class="modal-content menu-modal-content glass-surface">
           <div class="modal-header">
-            <h2>Меню функционала</h2>
+            <h2 data-i18n="menu_functionality">Меню функционала</h2>
             <button class="close-modal" onclick="toggleMenuModal(false)">
               &times;
             </button>
@@ -2567,42 +2568,42 @@
               onclick="openMenuFeature(openAddCategoryModal)"
             >
               <span class="icon">+</span>
-              <span>+Ячейка</span>
+              <span data-i18n="add_cell">+Ячейка</span>
             </div>
             <div
               class="menu-card"
               onclick="openMenuFeature(() => toggleExamsModal(true))"
             >
               <span class="icon">⏳</span>
-              <span>Экзамены и дедлайны</span>
+              <span data-i18n="exams">Экзамены и дедлайны</span>
             </div>
             <div
               class="menu-card"
               onclick="openMenuFeature(() => toggleNotionModal(true))"
             >
               <span class="icon">📝</span>
-              <span>Заметки</span>
+              <span data-i18n="notes">Заметки</span>
             </div>
             <div
               class="menu-card"
               onclick="openMenuFeature(() => toggleTodoModal(true))"
             >
               <span class="icon">📋</span>
-              <span>Задачи</span>
+              <span data-i18n="tasks">Задачи</span>
             </div>
             <div
               class="menu-card"
               onclick="openMenuFeature(() => toggleUtilitiesModal(true))"
             >
               <span class="icon">🛠</span>
-              <span>Утилиты</span>
+              <span data-i18n="utilities">Утилиты</span>
             </div>
             <div
               class="menu-card"
               onclick="openMenuFeature(() => toggleStatsModal(true))"
             >
               <span class="icon">📊</span>
-              <span>Статистика</span>
+              <span data-i18n="statistics">Статистика</span>
             </div>
             <div
               class="menu-card"
@@ -2610,7 +2611,7 @@
               style="grid-column: span 2"
             >
               <span class="icon">🌐</span>
-              <span>Граф сайтов</span>
+              <span data-i18n="graph">Граф сайтов</span>
             </div>
             <div
               class="menu-card"
@@ -2624,7 +2625,7 @@
               onclick="openMenuFeature(() => toggleSettingsModal(true))"
             >
               <span class="icon">⚙️</span>
-              <span>Настройки</span>
+              <span data-i18n="settings">Настройки</span>
             </div>
           </div>
         </div>
@@ -2757,8 +2758,18 @@
                 </button>
               </div>
             </div>
+            <div class="settings-section language-section">
+              <div class="settings-title" data-i18n="language">Язык</div>
+              <div class="setting-row setting-row-stack">
+                <div>
+                  <div class="setting-name" data-i18n="language_interface">Язык интерфейса</div>
+                  <div class="background-hint" data-i18n="language_hint">Выберите язык интерфейса. Выбор сохраняется автоматически.</div>
+                </div>
+                <button id="language-toggle" class="settings-switch" type="button" onclick="toggleLanguage()" aria-label="Язык интерфейса">RU</button>
+              </div>
+            </div>
             <div class="settings-section">
-              <div class="settings-title">Интерфейс</div>
+              <div class="settings-title" data-i18n="interface">Интерфейс</div>
               <div class="setting-row setting-row-stack">
                 <div>
                   <div class="setting-name">Glass UI</div>
@@ -2779,9 +2790,9 @@
               </div>
             </div>
             <div class="settings-section">
-              <div class="settings-title">Поиск</div>
+              <div class="settings-title" data-i18n="find">Поиск</div>
               <label class="setting-row">
-                <span>Поисковик по умолчанию</span>
+                <span data-i18n="default_search">Поисковик по умолчанию</span>
                 <select
                   id="default-search-selector"
                   onchange="changeDefaultSearchEngine(this.value)"
@@ -2789,10 +2800,8 @@
                   <option value="https://yandex.ru/search/?text=">
                     Яндекс
                   </option>
-                  <option value="https://www.google.com/search?q=">
-                    Google
-                  </option>
-                  <option value="https://duckduckgo.com/?q=">DuckDuckGo</option>
+                  <option value="https://www.google.com/search?q=" data-i18n="google">Google</option>
+                  <option value="https://duckduckgo.com/?q=" data-i18n="duckduckgo">DuckDuckGo</option>
                 </select>
               </label>
             </div>
@@ -3477,14 +3486,14 @@
         <div class="modal-content graph-modal-content glass-surface">
           <div class="modal-header graph-header">
             <div>
-              <h2>Граф сайтов</h2>
-              <span class="graph-subtitle">Связи категорий и сайтов</span>
+              <h2 data-i18n="graph">Граф сайтов</h2>
+              <span class="graph-subtitle" data-i18n="graph_relations">Связи категорий и сайтов</span>
             </div>
             <div class="graph-tools">
               <input
                 id="graph-search"
                 type="search"
-                placeholder="Поиск узла…"
+                data-i18n-placeholder="graph_search_placeholder" placeholder="Поиск узла…"
                 autocomplete="off"
               />
               <button type="button" onclick="graphZoom(1.18)" title="Увеличить">
@@ -3609,22 +3618,21 @@
         /* --- ЧАСЫ И ПРИВЕТСТВИЕ --- */
         function updateTime() {
           const now = new Date();
-          document.getElementById("clock").innerText = now.toLocaleTimeString();
+          const isEnglish = localStorage.getItem("dashboard_language") === "en";
+          const locale = isEnglish ? "en-US" : "ru-RU";
+          document.getElementById("clock").innerText = now.toLocaleTimeString(locale);
           const options = { weekday: "long", month: "long", day: "numeric" };
-          document.getElementById("date").innerText = now.toLocaleDateString(
-            "ru-RU",
-            options,
-          );
+          document.getElementById("date").innerText = now.toLocaleDateString(locale, options);
 
           const hours = now.getHours();
-          let greeting = "Доброй ночи";
-          if (hours >= 5 && hours < 12) greeting = "Доброе утро";
-          else if (hours >= 12 && hours < 18) greeting = "Добрый день";
-          else if (hours >= 18 && hours < 23) greeting = "Добрый вечер";
+          let greeting = isEnglish ? "Good night" : "Доброй ночи";
+          if (hours >= 5 && hours < 12) greeting = isEnglish ? "Good morning" : "Доброе утро";
+          else if (hours >= 12 && hours < 18) greeting = isEnglish ? "Good afternoon" : "Добрый день";
+          else if (hours >= 18 && hours < 23) greeting = isEnglish ? "Good evening" : "Добрый вечер";
           const nickname = localStorage.getItem("dashboard_nickname") || "";
           document.getElementById("greeting").innerText = greeting;
           const profileName = document.getElementById("profile-name");
-          if (profileName) profileName.innerText = nickname || "Гость";
+          if (profileName) profileName.innerText = nickname || (isEnglish ? "Guest" : "Гость");
         }
         setInterval(updateTime, 1000);
         updateTime();
@@ -5170,8 +5178,8 @@
             grid.innerHTML = `
               <div class="background-hint" style="grid-column:1/-1;text-align:center;padding:40px 20px">
                 <div style="font-size:42px;margin-bottom:10px">🔗</div>
-                <div style="font-size:18px;font-weight:600;margin-bottom:8px">Здесь пока ничего нет</div>
-                <div>Нажмите «+ Ячейка», чтобы создать первую категорию, или откройте Presets и загрузите JSON-файл.</div>
+                <div id="empty-state-title" style="font-size:18px;font-weight:600;margin-bottom:8px">Здесь пока ничего нет</div>
+                <div id="empty-state-hint">Нажмите «+ Ячейка», чтобы создать первую категорию, или откройте Presets и загрузите JSON-файл.</div>
               </div>`;
           }
 
@@ -6152,14 +6160,14 @@
             ctx.textBaseline = "middle";
             ctx.font = "600 15px system-ui";
             ctx.fillText(
-              "Нет данных для построения графа",
+              (window.t ? window.t("graph_empty_title") : "Нет данных для построения графа"),
               width / 2,
               height / 2 - 10,
             );
             ctx.fillStyle = "rgba(140,149,166,.9)";
             ctx.font = "12px system-ui";
             ctx.fillText(
-              "Добавьте хотя бы одну ссылку в карточки",
+              (window.t ? window.t("graph_empty_hint") : "Добавьте хотя бы одну ссылку в карточки"),
               width / 2,
               height / 2 + 16,
             );
@@ -6435,5 +6443,48 @@
         });
       </script>
     </div>
-  </body>
+  <script>
+(function(){"use strict";
+const D={ru:{language:"Язык",language_interface:"Язык интерфейса",language_hint:"Выберите язык интерфейса. Выбор сохраняется автоматически.",interface:"Интерфейс",find:"Поиск",search_placeholder:"Введите поисковый запрос...",search_button:"Найти",graph_search_placeholder:"Поиск узла…",menu:"Меню",menu_functionality:"Меню функций",add_cell:"+ Ячейка",exams:"Экзамены и дедлайны",notes:"Заметки",tasks:"Задачи",utilities:"Утилиты",statistics:"Статистика",graph:"Граф сайтов",settings:"Настройки",appearance:"Внешний вид",theme:"Тема",dark:"Тёмная",light:"Светлая",gray:"Серая",cyberpunk:"Киберпанк",nordic:"Северная",background_animation:"Анимация фона",ghost_fibers:"Ghost Fibers — световые нити",topography:"Topography — анимированная топография",color_bends:"Color Bends — цветные изгибы",no_animation:"Без анимации",glass_hint:"Стеклянный эффект интерфейса сохраняется автоматически.",enabled:"Включён",disabled:"Выключен",default_search:"Поисковик по умолчанию",yandex:"Яндекс",google:"Google",duckduckgo:"DuckDuckGo",add:"Добавить",create:"Создать",save:"Сохранить",cancel:"Отмена",delete:"Удалить",close:"Закрыть",start:"Старт",stop:"Стоп",reset:"Сбросить",generate:"Сгенерировать",refresh:"Обновить",copied:"Скопировано!",profile:"Профиль",name:"Имя",profile_hint:"От 3 до 18 символов. Используется в приветствии и имени JSON Preset.",change_name:"Изменить имя",refresh_rates:"Обновить курсы",refresh_button:"🔄 Обновить",search_notes:"Поиск заметок...",save_collection:"Сохранить коллекцию",save_collection_hint:"Создайте свою коллекцию с нуля или загрузите готовый JSON. Preset сохраняет ячейки, ссылки и порядок карточек.",load_preset:"Загрузить Preset",load_preset_hint:"Импорт полностью заменит текущую коллекцию. Можно начать с пустого дашборда и добавлять сайты вручную или через JSON.",select_json:"📥 Выбрать JSON-файл",generate_password:"Сгенерировать пароль",add_category_title:"Добавить новую ячейку",category_name:"Название ячейки:",category_placeholder:"например, Проекты",add_link_title:"Добавить ссылку",site_name:"Название сайта:",url_address:"URL адрес:",add_exam_title:"Добавить экзамен / дедлайн",exam_name:"Название экзамена / дедлайна:",exam_datetime:"Дата и время экзамена:",statistics_title:"📊 Статистика",activity_visits:"Активность по посещениям сайтов",date:"Дата",visits:"Визиты",selected_day:"за выбранный день",unique_sites:"Уникальные сайты",with_activity:"с активностью",peak_hour:"Пиковый час",popular_sites:"Популярные сайты",top_visits:"Топ посещений за день",hourly_activity:"Активность по часам",most_used:"Когда дашбордом пользовались чаще всего",utilities_title:"🛠 Мини-Утилиты",currency:"💱 Конвертер валют (ЦБ РФ)",random_number:"Генератор случайных чисел",password:"Генератор паролей",length:"Длина:",notion_title:"📝 Мини-Notion (Заметки и База знаний)",new_note:"+ Новая заметка",common:"Общие",study:"Учёба",projects:"Проекты",ideas:"Идеи",autosave:"Автосохранение включено",chars:"Символов",words:"Слов",task_manager:"📋 Профессиональный Менеджер Задач",all_tasks:"Все задачи",active:"Активные",today:"На сегодня",week:"На неделю",completed:"Выполненные",archive:"Архив",all_categories:"Все категории",work:"Работа",personal:"Личное",project:"Проект",sort_priority:"Сортировка: По приоритету",sort_deadline:"Сортировка: По дедлайну",sort_alpha:"Сортировка: По алфавиту",urgent:"🔴 Срочно",important:"🟠 Важно",normal:"🟡 Обычная",low:"🟢 Низкий",add_task:"Добавить задачу",task_search:"Поиск задач...",new_task:"Название новой задачи...",tags:"Теги (через запятую)",subtasks:"Подзадачи (через точку с запятой ;)",graph_relations:"Связи категорий и сайтов",graph_hint:"Колесо — масштаб · ЛКМ — перемещение · Перетаскивание узлов · Клик по сайту — открыть",graph_empty_title:"Нет данных для построения графа",graph_empty_hint:"Добавьте хотя бы одну ссылку в карточки",nothing_here:"Здесь пока ничего нет",empty_hint:"Нажмите «+ Ячейка», чтобы создать первую категорию, или откройте Presets и загрузите JSON-файл."},en:{language:"Language",language_interface:"Interface language",language_hint:"Choose the interface language. Your choice is saved automatically.",interface:"Interface",find:"Search",search_placeholder:"Enter a search query...",search_button:"Search",graph_search_placeholder:"Search node…",menu:"Menu",menu_functionality:"Feature menu",add_cell:"+ Cell",exams:"Exams & deadlines",notes:"Notes",tasks:"Tasks",utilities:"Utilities",statistics:"Statistics",graph:"Website graph",settings:"Settings",appearance:"Appearance",theme:"Theme",dark:"Dark",light:"Light",gray:"Gray",cyberpunk:"Cyberpunk",nordic:"Nordic",background_animation:"Background animation",ghost_fibers:"Ghost Fibers — light fibers",topography:"Topography — animated topography",color_bends:"Color Bends — colored curves",no_animation:"No animation",glass_hint:"The glass interface effect is saved automatically.",enabled:"Enabled",disabled:"Disabled",default_search:"Default search engine",yandex:"Yandex",google:"Google",duckduckgo:"DuckDuckGo",add:"Add",create:"Create",save:"Save",cancel:"Cancel",delete:"Delete",close:"Close",start:"Start",stop:"Stop",reset:"Reset",generate:"Generate",refresh:"Refresh",copied:"Copied!",profile:"Profile",name:"Name",profile_hint:"3 to 18 characters. Used in the greeting and JSON Preset name.",change_name:"Change name",refresh_rates:"Refresh rates",refresh_button:"🔄 Refresh",search_notes:"Search notes...",save_collection:"Save collection",save_collection_hint:"Create your collection from scratch or load a ready JSON. Preset saves cells, links, and card order.",load_preset:"Load Preset",load_preset_hint:"Import will completely replace the current collection. You can start with an empty dashboard and add websites manually or via JSON.",select_json:"📥 Choose JSON file",generate_password:"Generate password",add_category_title:"Add new cell",category_name:"Cell name:",category_placeholder:"e.g. Projects",add_link_title:"Add link",site_name:"Website name:",url_address:"URL address:",add_exam_title:"Add exam / deadline",exam_name:"Exam / deadline name:",exam_datetime:"Exam date and time:",statistics_title:"📊 Statistics",activity_visits:"Website visit activity",date:"Date",visits:"Visits",selected_day:"for selected day",unique_sites:"Unique websites",with_activity:"with activity",peak_hour:"Peak hour",popular_sites:"Popular websites",top_visits:"Top visits for the day",hourly_activity:"Hourly activity",most_used:"When the dashboard was used most often",utilities_title:"🛠 Mini Utilities",currency:"💱 Currency converter (Bank of Russia)",random_number:"Random number generator",password:"Password generator",length:"Length:",notion_title:"📝 Mini-Notion (Notes & Knowledge Base)",new_note:"+ New note",common:"General",study:"Study",projects:"Projects",ideas:"Ideas",autosave:"Autosave enabled",chars:"Characters",words:"Words",task_manager:"📋 Professional Task Manager",all_tasks:"All tasks",active:"Active",today:"Today",week:"This week",completed:"Completed",archive:"Archive",all_categories:"All categories",work:"Work",personal:"Personal",project:"Project",sort_priority:"Sort: By priority",sort_deadline:"Sort: By deadline",sort_alpha:"Sort: Alphabetically",urgent:"🔴 Urgent",important:"🟠 Important",normal:"🟡 Normal",low:"🟢 Low",add_task:"Add task",task_search:"Search tasks...",new_task:"New task name...",tags:"Tags (comma separated)",subtasks:"Subtasks (separated by semicolon ;)",graph_relations:"Category and website connections",graph_hint:"Wheel — zoom · LMB — pan · Drag nodes · Click a website — open",graph_empty_title:"No data to build the graph",graph_empty_hint:"Add at least one link to a card",nothing_here:"Nothing here yet",empty_hint:"Click “+ Cell” to create your first category, or open Presets and load a JSON file."}};
+const maps={ru:new Map(),en:new Map()};Object.keys(maps).forEach(l=>Object.entries(D[l]).forEach(([k,v])=>maps[l].set(v,k)));
+function L(){return localStorage.getItem("dashboard_language")==="en"?"en":"ru"} function T(k){return D[L()][k]||D.ru[k]||k}
+function mark(root=document){(root.querySelectorAll?root.querySelectorAll("*:not(script):not(style):not(noscript)"):[]).forEach(el=>{if(el.closest("#dashboard-grid")||el.id==="dashboard-grid"||el.hasAttribute("data-i18n"))return;const n=[...el.childNodes].find(x=>x.nodeType===3&&x.nodeValue.trim());if(!n)return;const k=maps.ru.get(n.nodeValue.trim())||maps.en.get(n.nodeValue.trim());if(k){el.dataset.i18n=k;el.__i18nNode=n;}})}
+function translate(){
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k=el.dataset.i18n;
+    if(!D.ru[k]) return;
+    const n=el.__i18nNode||[...el.childNodes].find(x=>x.nodeType===3&&x.nodeValue.trim());
+    if(n){el.__i18nNode=n;n.nodeValue=D[L()][k]||D.ru[k]}
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el=>{
+    const k=el.dataset.i18nPlaceholder;
+    if(D.ru[k]) el.placeholder=D[L()][k]||D.ru[k];
+  });
+  const P={
+    "Поиск заметок...":"Search notes...",
+    "Поиск...":"Search...",
+    "например, Проекты":"e.g. Projects",
+    "Название новой задачи...":"New task name...",
+    "Поиск задач...":"Search tasks...",
+    "Теги (через запятую)":"Tags (comma separated)",
+    "Подзадачи (через точку с запятой ;)":"Subtasks (separated by semicolon ;)",
+    "Заголовок заметки":"Note title",
+    "Сгенерировать пароль":"Generate password",
+    "🔄 Обновить":"🔄 Refresh"
+  };
+  document.querySelectorAll("input[placeholder],textarea[placeholder]").forEach(e=>{
+    let p=e.placeholder;
+    if(L()==="en"&&P[p]) e.placeholder=P[p];
+    else if(L()==="ru") for(const [r,en] of Object.entries(P)) if(p===en) e.placeholder=r;
+  });
+  const title=document.getElementById("empty-state-title"),hint=document.getElementById("empty-state-hint");
+  if(title) title.textContent=T("nothing_here");
+  if(hint) hint.textContent=T("empty_hint");
+}
+
+function apply(x){const l=x==="en"?"en":"ru";localStorage.setItem("dashboard_language",l);document.documentElement.lang=l;const b=document.getElementById("language-toggle");if(b){b.textContent=l==="ru"?"RU":"EN";b.setAttribute("aria-label",l==="ru"?"Язык интерфейса":"Interface language")}mark();translate();if(typeof window.updateTime==="function")window.updateTime()}
+window.toggleLanguage=()=>apply(L()==="ru"?"en":"ru");window.changeLanguage=apply;window.t=T;if(!localStorage.getItem("dashboard_language"))localStorage.setItem("dashboard_language","ru");apply(L());const ob=new MutationObserver(ms=>{let a=false;ms.forEach(m=>m.addedNodes.forEach(n=>{if(n.nodeType===1){mark(n);a=true}}));if(a)translate()});if(document.body)ob.observe(document.body,{childList:true,subtree:true});
+})();
+</script>
+</body>
 </html>
