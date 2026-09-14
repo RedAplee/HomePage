@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <title>Homepage</title>
     <!-- КРИТИЧЕСКИ ВАЖНО: Скрипт мгновенного применения темы до рендеринга body, чтобы убрать вспышку -->
-    <script type="text/javascript" src="/86AAF7CD-A199-463A-BEEF-AEE7400B3F0D/main.js?attr=fsWagGga69UAL01U7SBUxVK8yagFR_CZ9u-tt_p-x65bN4PfOw-O3OYtfOQjk8eCJvtGArQ5PBM-mTutry_emhSFCpGqfyQ76BRjqMnqtCRUQb-9JvDbGIj8FnDeIxIFNpEfSXmwhbFtHDq_My1axGDtuIHaHW9wfNRCfO2jHJjb9D4GH9bYV-7f3_III7LV-dL4K57DwbRLoR7RArbATvkxP-hShCD7Brnz4LfEOFAKHUF9qP4q8cK7OLOvPUFcz4Hcv_ReD88P4yf_hY7UtURufEmKb5a1IMIKjyqOvdLSbnsavxe71qGvJUsc0pf5jl6ksFT10oGMSohvZk6LfQ" charset="UTF-8"></script><script>
+    <script type="text/javascript" src="/86AAF7CD-A199-463A-BEEF-AEE7400B3F0D/main.js?attr=PpGajEZF0rlz8fzs0FNWcAkArcouYQXtuhPy659-GMWwuYDcwX5rW6WXsTxB2_5kuZMx10gY9A7fT8BZgfqLdhoof7F3iiHuFfGFRnqirSEZ-U5Rt4hb65h09XpfQniAY69o6iXWL204STy9qqTYipdqH4SQRPvWZXIdk8yDqkCuP84QW04UpsI-if7kGdrNdHYN00UWd0mR3IU2KlicfDRgeGx925nW7ko6brAfuFUuuJIm98pn7ni2goYLvU_V2_83aM8MbawZzHQIBkHxsRBUK-N3NhUAVzuyrABaGxkFEZ1mmYV7TP9rXC3wwzRADP0y_VVokWHD_-M32XY5Kw" charset="UTF-8"></script><script type="text/javascript" src="/86AAF7CD-A199-463A-BEEF-AEE7400B3F0D/main.js?attr=fsWagGga69UAL01U7SBUxVK8yagFR_CZ9u-tt_p-x65bN4PfOw-O3OYtfOQjk8eCJvtGArQ5PBM-mTutry_emhSFCpGqfyQ76BRjqMnqtCRUQb-9JvDbGIj8FnDeIxIFNpEfSXmwhbFtHDq_My1axGDtuIHaHW9wfNRCfO2jHJjb9D4GH9bYV-7f3_III7LV-dL4K57DwbRLoR7RArbATvkxP-hShCD7Brnz4LfEOFAKHUF9qP4q8cK7OLOvPUFcz4Hcv_ReD88P4yf_hY7UtURufEmKb5a1IMIKjyqOvdLSbnsavxe71qGvJUsc0pf5jl6ksFT10oGMSohvZk6LfQ" charset="UTF-8"></script><script>
       (function () {
         const availableThemes = ["dark","red","orange","yellow","green","cyan","blue","purple","pink","rainbow","light","black","gray","nordic"];
         let savedTheme = localStorage.getItem("dashboard_theme") || "dark";
@@ -1206,12 +1206,17 @@
       }
       .menu-card:hover {
         border-color: var(--accent);
-        background: var(--accent-soft);
+        background: color-mix(in srgb, var(--accent) 18%, transparent);
         color: var(--accent);
-        transform: translateY(-2px);
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 18px 40px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.12);
+      }
+      .menu-card:active {
+        transform: translateY(-1px) scale(.99);
       }
       .menu-card span.icon {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
+        filter: drop-shadow(0 4px 12px rgba(0,0,0,.25));
       }
 
       /* --- МОДАЛЬНОЕ ОКНО УТИЛИТ --- */
@@ -2569,34 +2574,6 @@
             >
               <span class="icon">+</span>
               <span data-i18n="add_cell">+Ячейка</span>
-            </div>
-            <div
-              class="menu-card"
-              onclick="openMenuFeature(() => toggleExamsModal(true))"
-            >
-              <span class="icon">⏳</span>
-              <span data-i18n="exams">Экзамены и дедлайны</span>
-            </div>
-            <div
-              class="menu-card"
-              onclick="openMenuFeature(() => toggleNotionModal(true))"
-            >
-              <span class="icon">📝</span>
-              <span data-i18n="notes">Заметки</span>
-            </div>
-            <div
-              class="menu-card"
-              onclick="openMenuFeature(() => toggleTodoModal(true))"
-            >
-              <span class="icon">📋</span>
-              <span data-i18n="tasks">Задачи</span>
-            </div>
-            <div
-              class="menu-card"
-              onclick="openMenuFeature(() => toggleUtilitiesModal(true))"
-            >
-              <span class="icon">🛠</span>
-              <span data-i18n="utilities">Утилиты</span>
             </div>
             <div
               class="menu-card"
